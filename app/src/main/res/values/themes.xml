@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.AmarManibag" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/splash_background</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+</resources>
