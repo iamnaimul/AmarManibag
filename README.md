@@ -16,8 +16,6 @@
 
 <br><br>
 
-<img src="assets/app-logo.png" width="140" alt="আমার মানিব্যাগ App Logo">
-
 </div>
 
 ---
