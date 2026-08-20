@@ -1,364 +1,321 @@
-# Amar Money Bag
+<div align="center">
 
-**Version:** 1.0.190826\
-**Application ID:** `com.iamnaimul.amarmanibag`\
-**Platform:** Android\
-**Minimum Android Version:** Android 8.0 (API 26)\
-**Target Android Version:** Android 15 (API 35)\
-**Developer:** Naimul Hassan
+# 💰 আমার মানিব্যাগ
 
-> **Amar Money Bag** is a lightweight, offline-first personal money
-> management application for Android. It is designed for simple personal
-> income and expense tracking, with a Bengali user interface and local
-> data storage.
+### ব্যক্তিগত আয়-ব্যয়ের সহজ ও অফলাইন হিসাবরক্ষণ অ্যাপ
 
-## Overview
+<p>
+  <strong>Amar Manibag</strong> is a simple, private and offline-first Android application for managing personal income and expenses.
+</p>
 
-Amar Money Bag helps users record and manage personal financial
-transactions without requiring an internet connection or an online
-account.
+<br>
 
-The application is intentionally designed to be lightweight and suitable
-for lower-spec Android phones. Normal app usage does not load the entire
-transaction database into memory at once. Transactions are loaded in
-small pages, while totals and account balances are calculated directly
-by the local SQLite/Room database.
+[![Download APK](https://img.shields.io/badge/Download-Latest%20APK-brightgreen?style=for-the-badge\&logo=android)](../../releases/latest)
+[![GitHub Release](https://img.shields.io/github/v/release/YOUR_USERNAME/AmarManibag?style=for-the-badge\&logo=github)](../../releases)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge\&logo=github)](.)
 
-## Main Features
+<br><br>
 
-### Dashboard / Home
+<img src="assets/app-logo.png" width="140" alt="আমার মানিব্যাগ App Logo">
 
-The Home screen provides a quick overview of the user's finances:
+</div>
 
--   Total current balance
--   Current month's total income
--   Current month's total expense
--   Account/source-wise balances
--   Quick access to add a new transaction
--   Scrollable account/source cards when there are more accounts than
-    can fit on screen
+---
 
-The Home screen does **not** load or display a complete
-recent-transaction list.
+## 📖 About
 
-### Add Transactions
+**আমার মানিব্যাগ (Amar Manibag)** একটি সহজ, ব্যক্তিগত এবং সম্পূর্ণ অফলাইন Android application, যার মাধ্যমে দৈনন্দিন আয় ও ব্যয়ের হিসাব সহজে সংরক্ষণ ও পর্যবেক্ষণ করা যায়।
 
-New transactions can be recorded directly from the Home screen.
+অ্যাপটির মূল লক্ষ্য হলো ব্যক্তিগত অর্থ ব্যবস্থাপনার জন্য একটি সহজ, দ্রুত, নির্ভরযোগ্য এবং internet-independent solution প্রদান করা।
 
-A transaction can contain:
+এই অ্যাপটি ব্যক্তিগত ব্যবহারের কথা মাথায় রেখে তৈরি করা হয়েছে। ব্যবহারকারীর আর্থিক তথ্য কোনো online account বা cloud service-এর ওপর নির্ভর করে না।
 
--   Date
--   Money source/account
--   Transaction type
-    -   Income
-    -   Expense
--   Description
--   Amount
+---
 
-### Journal
+## ✨ Features
 
-The Journal contains the complete transaction history.
+* 💰 আয় ও ব্যয়ের হিসাব সংরক্ষণ
+* 📊 বর্তমান ব্যালেন্স দেখা
+* 📝 লেনদেনের বিস্তারিত ইতিহাস
+* 📅 তারিখ অনুযায়ী লেনদেন সংরক্ষণ
+* ✏️ পূর্বের transaction সম্পাদনা
+* 🗑️ প্রয়োজন হলে transaction মুছে ফেলা
+* 💾 Local SQLite database
+* 🔄 Database backup and restore
+* 📤 মাসিক হিসাব CSV হিসেবে export
+* 🌐 সম্পূর্ণ Offline
+* 🇧🇩 বাংলা user interface
+* 🔢 আর্থিক পরিমাণ English numerals-এ প্রদর্শন
+* 🔒 ব্যক্তিগত transaction data device-এ localভাবে সংরক্ষণ
+* ⚡ দ্রুত এবং lightweight interface
+* 📱 Android-এর জন্য optimized UI
 
-To reduce memory usage:
 
--   Transactions are loaded in pages rather than all at once.
--   The current implementation uses a page size of 40 records.
--   Additional records are loaded as the user scrolls.
--   Search and filters are processed through database queries.
--   The UI uses lazy scrolling so only visible items need to be
-    composed.
+## 🛠️ Built With
 
-Available filtering includes transaction type, account/source and date
-range, along with text search.
+| Technology          | Purpose                      |
+| ------------------- | ---------------------------- |
+| **Kotlin**          | Application development      |
+| **Jetpack Compose** | Modern Android UI            |
+| **SQLite**          | Local data storage           |
+| **Android Studio**  | Development environment      |
+| **Android SDK**     | Android application platform |
 
-### Monthly Summary
+---
 
-The Summary screen is focused on transactions for the selected month.
+## 🗃️ Data Storage
 
-It provides:
+আমার মানিব্যাগ local SQLite database ব্যবহার করে transaction এবং application settings সংরক্ষণ করে।
 
--   Selected month
--   Number of transactions in that month
--   Monthly transaction list
--   Month navigation
--   Paginated loading of monthly transactions
+প্রধান তথ্যগুলোর মধ্যে রয়েছে:
 
-The account/source dashboard is intentionally kept on the Home screen
-rather than duplicated in Summary.
+* Transaction date
+* Transaction type
+* Description
+* Amount
+* Created time
+* Updated time
+* Opening balance
 
-### Money Sources / Accounts
+ডেটা local device storage-এ রাখা হয় এবং অ্যাপের স্বাভাবিক ব্যবহারের জন্য internet connection প্রয়োজন হয় না।
 
-Users can maintain multiple money sources/accounts, such as:
+---
 
--   Cash
--   Bank account
--   Mobile financial service
--   Other personal sources
+## 💾 Backup & Restore
 
-Accounts can be activated or deactivated, and each account can have an
-opening balance.
+ব্যবহারকারীর গুরুত্বপূর্ণ financial data নিরাপদ রাখার জন্য application-এ database backup এবং restore সুবিধা রয়েছে।
 
-Account balances are calculated using database-level aggregation rather
-than loading all related transactions into application memory.
+### Backup
 
-### Backup and Restore
+ব্যবহারকারী প্রয়োজন অনুযায়ী নিজের database backup সংরক্ষণ করতে পারবেন।
 
-The application supports local backup and restore.
+### Restore
 
-The intended backup folder structure is:
+অ্যাপ uninstall/reinstall করার পর পূর্বে তৈরি করা backup ব্যবহার করে database পুনরুদ্ধার করা সম্ভব।
 
-``` text
-AmarMoneyBag/
-└── BackUps/
+> **Important:** Backup file নিরাপদ জায়গায় সংরক্ষণ করুন। Backup হারিয়ে গেলে সেই backup থেকে data restore করা সম্ভব হবে না।
+
+---
+
+## 📤 Monthly Export
+
+মাসিক আয়-ব্যয়ের হিসাব সংরক্ষণ ও বিশ্লেষণের জন্য transaction data CSV format-এ export করা যায়।
+
+CSV file Microsoft Excel, Google Sheets এবং অন্যান্য spreadsheet application-এ খোলা যায়।
+
+---
+
+## 🔐 Privacy
+
+আমার মানিব্যাগ একটি **offline-first personal finance application**।
+
+### Privacy principles
+
+* কোনো account/login প্রয়োজন নেই।
+* কোনো cloud account প্রয়োজন নেই।
+* কোনো online server-এর ওপর transaction data নির্ভর করে না।
+* Internet connection ছাড়া application-এর মূল হিসাবরক্ষণ কার্যক্রম ব্যবহার করা যায়।
+* Personal transaction data local device storage-এ সংরক্ষণ করা হয়।
+* Backup file ব্যবহারকারীর নিজের নিয়ন্ত্রণে থাকে।
+
+**Your financial records belong to you.**
+
+---
+
+## 📥 Installation
+
+### Option 1 — Download APK
+
+সবচেয়ে সহজ উপায় হলো GitHub Releases থেকে সর্বশেষ APK ডাউনলোড করা।
+
+1. এই repository-এর **Releases** page-এ যান।
+2. সর্বশেষ release নির্বাচন করুন।
+3. `AmarManibag-*.apk` ফাইলটি download করুন।
+4. Android device-এ APK file-টি open করুন।
+5. প্রয়োজন হলে Android-এর **Install unknown apps** permission চালু করুন।
+6. Install করুন।
+7. অ্যাপটি চালু করে ব্যবহার শুরু করুন।
+
+### 📱 Download Latest APK
+
+[![Download Latest APK](https://img.shields.io/badge/📱%20Download-Latest%20APK-brightgreen?style=for-the-badge)](../../releases/latest)
+
+---
+
+## 💻 Build From Source
+
+আপনি চাইলে source code থেকে নিজেই application build করতে পারবেন।
+
+### Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/AmarManibag.git
 ```
 
-Backup data is stored locally and can be restored after reinstalling the
-application.
+তারপর Android Studio-তে project directory open করুন।
 
-The application does not require cloud storage or an internet connection
-for normal backup/restore operations.
+Android Studio project sync সম্পন্ন করার পর:
 
-### Theme
+**Build → Build Bundle(s) / APK(s) → Build APK(s)**
 
-The application supports:
+এর মাধ্যমে APK তৈরি করতে পারবেন।
 
--   Light mode with an off-white paper-style background
--   Dark mode
+---
 
-The interface is designed primarily for practical daily use with a clean
-and minimal layout.
+## 📂 Project Structure
 
-### Navigation
-
-The main sections are:
-
--   Home
--   Journal
--   Summary
--   Settings
-
-Users can navigate using the bottom navigation bar and horizontal swipe
-gestures.
-
-The individual screens also support vertical scrolling where required.
-
-## Performance and Resource Design
-
-Amar Money Bag is designed with low-resource devices in mind.
-
-### Database-first calculations
-
-Monthly income, monthly expense, transaction counts and account balances
-are calculated using SQLite/Room aggregate queries.
-
-This avoids repeatedly loading and filtering large transaction
-collections in Kotlin.
-
-### Paginated transaction loading
-
-The application does not normally read every transaction into memory.
-
-Journal and monthly transaction screens use paginated database queries
-with a page size of 40.
-
-For example:
-
-``` text
-Database
-   ↓
-First 40 transactions
-   ↓
-User scrolls
-   ↓
-Next 40 transactions
-   ↓
-User scrolls
-   ↓
-Next 40 transactions
+```text
+AmarManibag/
+│
+├── app/
+│   └── src/
+│       └── main/
+│           ├── java/
+│           ├── res/
+│           └── AndroidManifest.xml
+│
+├── screenshots/
+│   ├── home.png
+│   ├── transactions.png
+│   ├── add_transaction.png
+│   └── settings.png
+│
+├── assets/
+│   └── app-logo.png
+│
+├── gradle/
+│
+├── build.gradle.kts
+├── settings.gradle.kts
+├── gradlew
+├── gradlew.bat
+└── README.md
 ```
 
-### Lazy UI
+---
 
-Transaction and account lists use lazy scrolling components so the UI
-does not need to compose every list item simultaneously.
+## 🚀 Releases
 
-### Lightweight startup
+Application-এর নতুন version এবং APK GitHub Releases-এর মাধ্যমে প্রকাশ করা হবে।
 
-The application does not use an artificial startup delay or a custom
-splash Activity.
+### Current Version
 
-Instead, Android's native starting-window/splash mechanism is used to
-display the application logo while the main activity starts.
+**Version:** `1.0.0`
 
-The startup logo uses the application's wallet artwork with a 25%
-rounded-square shape.
+**Release:** First public release
 
-### No network access
+[![View Releases](https://img.shields.io/badge/View-All%20Releases-blue?style=for-the-badge\&logo=github)](../../releases)
 
-The application is designed to work completely offline.
+---
 
-The Android manifest intentionally does not request:
+## 📝 Release History
 
--   `INTERNET`
--   Network state
--   Bluetooth
--   Other network-related permissions
+### v1.0.0
 
-## Data Storage
+**Initial Release**
 
-Application data is stored locally using:
+* Personal income tracking
+* Personal expense tracking
+* Balance calculation
+* Transaction history
+* Local SQLite database
+* Backup and restore
+* CSV export
+* Bengali user interface
+* Offline operation
 
--   SQLite
--   Android Room
+---
 
-The application does not require an external server or online database.
+## 🧭 Roadmap
 
-Transaction data includes fields such as:
+Future versions may include improvements such as:
 
--   Transaction ID
--   Account/source ID
--   Transaction date
--   Transaction type
--   Description
--   Amount
--   Creation/update information
+* 📊 More detailed financial reports
+* 📈 Monthly income/expense statistics
+* 🔎 Improved transaction search
+* 🏷️ Transaction categories
+* 📅 Advanced date filtering
+* 🎨 UI improvements
+* 📊 Visual charts
+* 🔐 Additional backup improvements
 
-## Privacy
+> Features listed in the roadmap are planned ideas and may change in future releases.
 
-Amar Money Bag is intended as a personal offline money-management
-application.
+---
 
-Because normal operation does not require an internet connection:
+## ⚠️ Important Notes
 
--   Financial records remain on the device unless the user
-    exports/backups them.
--   No online account is required.
--   No cloud service is required for normal operation.
--   No internet permission is declared by the application.
+* This application is primarily intended for personal use.
+* Always keep a secure copy of your backup file.
+* Do not delete your backup until you have confirmed that the restored data is correct.
+* The APK distributed through GitHub Releases should preferably be a signed release build.
+* Before installing a new version, keeping a recent backup is recommended.
 
-Users should still protect their phone and backup files because local
-application data and backup files can contain sensitive financial
-information.
+---
 
-## Bengali Interface
+## 🤝 Contributing
 
-The user interface is designed primarily in Bengali.
+This project is primarily developed for personal use.
 
-The project includes Noto Sans Bengali font resources for Bengali text
-rendering.
+Suggestions, bug reports and improvements are welcome through the GitHub repository.
 
-Amounts are intended to be displayed using English numerals for
-practical financial entry and reading.
+If you find a problem, please open an **Issue** and provide:
 
-## Technology Stack
+1. Application version
+2. Android version
+3. Device model
+4. Description of the problem
+5. Steps to reproduce the problem
+6. Screenshot, if applicable
 
--   **Language:** Kotlin
--   **UI:** Jetpack Compose
--   **Architecture:** Android application with ViewModel + Repository
-    pattern
--   **Database:** Room / SQLite
--   **Database queries:** SQL aggregate and paginated queries
--   **Build system:** Gradle with Kotlin DSL
--   **Dependency processing:** KSP
--   **Minimum SDK:** 26
--   **Target SDK:** 35
--   **Compile SDK:** 35
+---
 
-## Project Structure
+## 🐛 Bug Reports
 
-The main source package is:
+If you discover a bug, please create a GitHub Issue.
 
-``` text
-com.iamnaimul.amarmanibag
+### Please include:
+
+```text
+Application Version:
+Android Version:
+Device:
+Problem:
+Steps to Reproduce:
+Expected Result:
+Actual Result:
 ```
 
-Important components include:
+---
 
-``` text
-app/
-└── src/main/
-    ├── AndroidManifest.xml
-    ├── java/com/iamnaimul/amarmanibag/
-    │   ├── MainActivity.kt
-    │   ├── AmarManibagApplication.kt
-    │   ├── AppContainer.kt
-    │   ├── BackupManager.kt
-    │   ├── Theme.kt
-    │   ├── Ui.kt
-    │   ├── ViewModel.kt
-    │   ├── data/
-    │   │   ├── Account.kt
-    │   │   ├── AppRepository.kt
-    │   │   ├── Daos.kt
-    │   │   ├── Settings.kt
-    │   │   └── Transaction.kt
-    │   └── ui/
-    │       ├── App.kt
-    │       ├── ReportScreen.kt
-    │       ├── SettingsScreen.kt
-    │       └── TransactionsScreen.kt
-    └── res/
-        ├── drawable/
-        ├── drawable-nodpi/
-        ├── font/
-        ├── mipmap-*/
-        └── values/
-```
+## 📄 License
 
-## Build
+This project is currently provided for personal use.
 
-Open the project folder in Android Studio.
+The licensing terms may be defined in a future release.
 
-The project is configured with:
+---
 
-``` text
-compileSdk = 35
-targetSdk = 35
-minSdk = 26
-versionName = 1.0.190826
-versionCode = 190826
-```
+## 👨‍💻 Developer
 
-Then use Android Studio's Gradle sync and build tools to generate the
-APK.
+**Md. Naimul Hassan**
 
-## Version
+Teacher & Developer
 
-### 1.0.190826
+---
 
-This release focuses on:
+<div align="center">
 
--   Lightweight operation
--   Reduced memory usage
--   Paginated transaction loading
--   Database-level aggregation
--   Faster startup
--   Native Android startup logo
--   25% rounded startup logo
--   Offline operation
--   Home dashboard simplification
--   Monthly transaction-focused Summary
--   Improved support for lower-spec Android devices
+### 💰 আমার মানিব্যাগ
 
-## Developer
+**সহজ হিসাব • ব্যক্তিগত তথ্য • সম্পূর্ণ অফলাইন**
 
-**Naimul Hassan**
+<br>
 
-**Developed by Naimul Hassan**\
-*A gift to RabbatuALBayt*
+[📱 Download Latest APK](../../releases/latest)
 
-## License
+<br><br>
 
-This project is intended for personal use.
+Made with ❤️ for simple personal finance management.
 
-If you publish this repository publicly, add the license that reflects
-how you want others to use, modify, and redistribute the project.
-
-## Disclaimer
-
-Amar Money Bag is a personal record-keeping tool. It is not a banking
-application, accounting service, financial institution, or financial
-advisory service.
-
-Users are responsible for maintaining their own backups and verifying
-financial records.
+</div>
