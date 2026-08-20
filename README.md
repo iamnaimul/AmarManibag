@@ -196,7 +196,7 @@ Application-এর নতুন version এবং APK GitHub Releases-এর ম
 
 ### Current Version
 
-**Version:** `1.0.0`
+**Version:** `1.0.1`
 
 **Release:** First public release
 
