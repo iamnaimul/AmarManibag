@@ -206,7 +206,7 @@ Application-এর নতুন version এবং APK GitHub Releases-এর ম
 
 ## 📝 Release History
 
-### v1.0.0
+### v1.0.1
 
 **Initial Release**
 
